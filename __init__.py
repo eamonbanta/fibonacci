@@ -3,14 +3,16 @@ import sys
 import fibonacci
 
 
-VALID_CHOICES = ('q', 'n')
+VALID_CHOICES = ('q', 'n', 'a')
 VALID_CHOICE_NAMES = [
     '(q)uit',
     '(n)aive (very slow for n > 40, exceeds recursion limit near n == 100)',
+    '(a)rray',
 ]
 
 CHOICE_TO_METHOD = {
     'n': fibonacci.naive_fib,
+    'a': fibonacci.array_fib,
 }
 
 
@@ -34,7 +36,7 @@ def main():
         print "Great! What fibonacci index do you want to calculate?"
         n = int(raw_input())
 
-        print  CHOICE_TO_METHOD[choice_made](n)
+        print CHOICE_TO_METHOD[choice_made](n)
 
     return 0
 
