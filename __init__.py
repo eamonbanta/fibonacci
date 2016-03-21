@@ -6,24 +6,27 @@ VALID_CHOICES = {
 }
 
 
+def print_choice_list():
+    print "Possible choices are:"
+    for choice in VALID_CHOICES.values():
+        print choice
+
+
 def main():
     print "How do you want to calculate the fibonacci numbers?"
-    print "Possible choices are:"
-    print "(q)uit"
+    print_choice_list()
+    choice_made = raw_input().strip()
 
-    fib_type = raw_input().strip()
-
-    while fib_type not in VALID_CHOICES:
+    while choice_made not in VALID_CHOICES:
         print "Sorry, that's an invalid choice. Try again."
-        print "Possible choices are:"
-        print "(q)uit"
-        fib_type = raw_input().strip()
+        print_choice_list()
+        choice_made = raw_input().strip()
 
-    if fib_type != 'q':
+    if choice_made != 'q':
         print "Great!"
 
-
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())
