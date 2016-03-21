@@ -17,3 +17,14 @@ def array_fib(n):
         a[i] = a[i-1] + a[i-2]
 
     return a[n]
+
+
+def tuple_swap_fib(n):
+    if n < 2:
+        return n
+
+    a, b = 0, 1
+    for _ in xrange(2, n + 1):
+        a, b = b, a + b
+
+    return b

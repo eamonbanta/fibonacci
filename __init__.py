@@ -3,16 +3,18 @@ import sys
 import fibonacci
 
 
-VALID_CHOICES = ('q', 'n', 'a')
+VALID_CHOICES = ('q', 'n', 'a', 't')
 VALID_CHOICE_NAMES = [
     '(q)uit',
     '(n)aive (very slow for n > 40, exceeds recursion limit near n == 100)',
     '(a)rray',
+    '(t)uple swap',
 ]
 
 CHOICE_TO_METHOD = {
     'n': fibonacci.naive_fib,
     'a': fibonacci.array_fib,
+    't': fibonacci.tuple_swap_fib,
 }
 
 
