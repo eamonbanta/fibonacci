@@ -1,14 +1,22 @@
 import sys
 
+import fibonacci
 
-VALID_CHOICES = {
-    'q': '(q)uit',
+
+VALID_CHOICES = ('q', 'n')
+VALID_CHOICE_NAMES = [
+    '(q)uit',
+    '(n)aive (very slow for n > 40, exceeds recursion limit near n == 100)',
+]
+
+CHOICE_TO_METHOD = {
+    'n': fibonacci.naive_fib,
 }
 
 
 def print_choice_list():
     print "Possible choices are:"
-    for choice in VALID_CHOICES.values():
+    for choice in VALID_CHOICE_NAMES:
         print choice
 
 
@@ -23,7 +31,10 @@ def main():
         choice_made = raw_input().strip()
 
     if choice_made != 'q':
-        print "Great!"
+        print "Great! What fibonacci index do you want to calculate?"
+        n = int(raw_input())
+
+        print  CHOICE_TO_METHOD[choice_made](n)
 
     return 0
 
