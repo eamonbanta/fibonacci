@@ -28,3 +28,17 @@ def tuple_swap_fib(n):
         a, b = b, a + b
 
     return b
+
+
+def intermediate_var_swap_fib(n):
+    if n < 2:
+        return n
+
+    a = 0
+    b = 1
+    for _ in xrange(2, n + 1):
+        tmp = b
+        b = a + b
+        a = tmp
+
+    return b
