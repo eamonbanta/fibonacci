@@ -42,3 +42,27 @@ def intermediate_var_swap_fib(n):
         a = tmp
 
     return b
+
+
+def generator_fib(n):
+    if n < 2:
+        return n
+
+    def _gen_fib():
+        a = 0
+        b = 1
+        while True:
+            a, b = b, a + b
+            yield b
+
+    i = 2
+    res = 1
+    for x in _gen_fib():
+        if i == n:
+            res = x
+            break
+        i += 1
+
+    return res
+
+
