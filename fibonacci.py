@@ -1,4 +1,13 @@
 def naive_fib(n):
+    """ The most obvious but insanely inefficient fibonacci algorithm.
+
+    For n equal to 35, the program is already noticeably slow.
+
+    For n equal to 50 there is a considerable wait.
+
+    The algorithm hits the maximum recursion depth for python at around
+    n = 99.
+    """
     if n < 2:
         return n
 
@@ -6,6 +15,7 @@ def naive_fib(n):
 
 
 def array_fib(n):
+    """ Pretty fast but more memory intensive than the following algorithms """
     if n < 2:
         return n
 
@@ -20,6 +30,7 @@ def array_fib(n):
 
 
 def tuple_swap_fib(n):
+    """ Swaps values of a and b using tuples """
     if n < 2:
         return n
 
@@ -31,6 +42,7 @@ def tuple_swap_fib(n):
 
 
 def intermediate_var_swap_fib(n):
+    """ Swaps values of a and b using a temp var """
     if n < 2:
         return n
 
@@ -45,6 +57,13 @@ def intermediate_var_swap_fib(n):
 
 
 def generator_fib(n):
+    """ Uses a generator fibonacci sequence.
+
+    This is just to show how it could be used. The only real
+    practical situation to use a fib generator is if you don't
+    know how many elements you want. Otherwise, using xrange as
+    in the methods above, is just as memory-efficient.
+    """
     if n < 2:
         return n
 
