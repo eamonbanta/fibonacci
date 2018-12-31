@@ -29,20 +29,6 @@ def print_choice_list():
 
 
 def main():
-    print "How do you want to calculate the fibonacci numbers?"
-    print_choice_list()
-    choice_made = raw_input().strip()
-
-    while choice_made not in VALID_CHOICES:
-        print "Sorry, that's an invalid choice. Try again."
-        print_choice_list()
-        choice_made = raw_input().strip()
-
-    if choice_made != 'q':
-        print "Great! What fibonacci index do you want to calculate?"
-        n = int(raw_input())
-
-        print CHOICE_TO_METHOD[choice_made](n)
 
     return 0
 
